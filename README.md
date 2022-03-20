@@ -10,4 +10,15 @@ Yeah, the code could be prettier and could be more generalized, but it could als
 Result with my Siglent SDS1104X-E's LCD panel I needed to know the timing info of:
 
 ![Measurement results](1647799768.png?raw=true "Measurement results")
+Interpretation:
 
+Pixel clock: 27.5MHz (275000852 pixel clock periods in 10s)
+
+Hsync period: 0x420 = 1056 px_clk cycles
+Hsync pulse width: 0x14 = 20 px_clk cycles
+Vsync period: 0x875A0 = 554400 px_clk cycles = 525 lines
+Vsync pulse width: 0x2940 = 10560 px_clk cycles = 10 lines
+
+Vsync cycles being an integer multiple of hsync period cycles pretty much proves there's no off-by-1 error in my RTL
+
+This all maps to a screen refresh rate is 49.(603174) Hz, interesting.
