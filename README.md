@@ -10,6 +10,7 @@ Yeah, the code could be prettier and could be more generalized, but it could als
 Result with my Siglent SDS1104X-E's LCD panel I needed to know the timing info of:
 
 ![Measurement results](1647799768.png?raw=true "Measurement results")
+
 Interpretation:
 
 Pixel clock: 27.5MHz (275000852 pixel clock periods in 10s)
