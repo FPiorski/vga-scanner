@@ -14,11 +14,12 @@ Result with my Siglent SDS1104X-E's LCD panel I needed to know the timing info o
 Interpretation:
 
 Pixel clock: 27.5MHz (275000852 pixel clock periods in 10s)
-
-Hsync period: 0x420 = 1056 px_clk cycles
-Hsync pulse width: 0x14 = 20 px_clk cycles
-Vsync period: 0x875A0 = 554400 px_clk cycles = 525 lines
-Vsync pulse width: 0x2940 = 10560 px_clk cycles = 10 lines
+|                   | hex readout | in px_clk cycles | in horizontal lines |
+| ----------------- | ----------- | ---------------- | ------------------- | 
+| hsync pulse width |          14 |               20 |                 N/A |
+| hsync period      |         420 |             1056 |                 N/A | 
+| vsync pulse width |        2940 |            10560 |                  10 |
+| vsync period      |       875A0 |           554400 |                 525 |
 
 Vsync cycles being an integer multiple of hsync period cycles pretty much proves there's no off-by-1 error in my RTL
 
